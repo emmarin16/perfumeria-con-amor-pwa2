@@ -1,5 +1,5 @@
 
-const IP_SERVIDOR = 'http://34.31.23.74';
+const IP_SERVIDOR = 'https://api-perfumeria-backen.onrender.com';
 
 
 function toggleForms() {

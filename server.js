@@ -8,9 +8,9 @@ app.use(express.json());
 
 // Conexión a la base de datos en Google Cloud
 const db = mysql.createConnection({
-  host: 'AQUI_PON_LA_IP_DE_GOOGLE_CLOUD', // Ej: '34.31.23.74'
+  host: '34.31.23.74', // 
   user: 'admin_pwa',
-  password: 'TuContraseñaSegura123', // La misma que configuraste en MariaDB
+  password: 'TuContraseñaSegura123', 
   database: 'perfumeria'
 });
 
