@@ -13,13 +13,17 @@ const db = mysql.createConnection({
   port: 3306,
   password: 'TuContraseñaSegura123', 
   database: 'perfumeria'
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
-db.connect(err => {
-  if(err) {
-    console.error('Error conectando a la BD:', err);
+db.getConnection((err, connection) => {
+  if (err) {
+    console.error('Error conectando a la BD (ETIMEDOUT/Permisos):', err);
   } else {
-    console.log('¡Conectado a MariaDB con éxito!');
+    console.log('¡Conectado a MariaDB con éxito desde el Pool!');
+    connection.release();
   }
 });
 
