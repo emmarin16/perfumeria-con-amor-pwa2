@@ -1,5 +1,5 @@
 
-const IP_SERVIDOR = 'https://api-perfumeria-backen.onrender.com';
+const IP_SERVIDOR = 'http://34.31.23.74';
 
 
 function toggleForms() {
@@ -8,7 +8,7 @@ function toggleForms() {
   const title = document.getElementById('formTitle');
   const mensajeEl = document.getElementById('mensaje');
   
-  mensajeEl.textContent = ""; 
+  mensajeEl.textContent = ""; // Limpiar mensajes
 
   if (loginForm.style.display === 'none') {
     loginForm.style.display = 'block';
@@ -39,7 +39,7 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
     if (data.success) {
       mensajeEl.style.color = "green";
       mensajeEl.textContent = data.mensaje;
-      setTimeout(toggleForms, 2000); 
+      setTimeout(toggleForms, 2000); // Cambia al login después de 2 segundos
     } else {
       mensajeEl.style.color = "red";
       mensajeEl.textContent = data.mensaje;
@@ -65,12 +65,11 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
   })
   .then(res => res.json())
   .then(data => {
-    
     if (data.success) {
       mensajeEl.style.color = "green";
       mensajeEl.textContent = "¡Bienvenida, " + data.usuario + "! Redirigiendo...";
       
-      // Guardamos el nombre de usuario en el navegador para usarlo en la página principal
+   
       localStorage.setItem('usuarioActivo', data.usuario);
       
       // REDIRECCIÓN A LA PÁGINA PRINCIPAL
