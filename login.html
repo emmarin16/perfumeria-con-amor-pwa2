@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso - Perfumería con Amor</title>
+  <style>
+    /* Estilos elegantes para la perfumería */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fce4ec; /* Fondo rosa muy suave */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .auth-container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(216, 27, 96, 0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    h2 {
+      color: #d81b60; /* Tu color principal */
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #f48fb1;
+      border-radius: 8px;
+      box-sizing: border-box;
+      outline: none;
+      transition: border 0.3s;
+    }
+    input:focus {
+      border-color: #d81b60;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #d81b60;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #ad1457;
+    }
+    .toggle-text {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+    .toggle-text span {
+      color: #d81b60;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    /* Ocultar el formulario de registro por defecto */
+    #registerForm {
+      display: none;
+    }
+    #mensaje {
+      margin-top: 15px;
+      font-weight: bold;
+      min-height: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-container">
+    <h2 id="formTitle">Iniciar Sesión</h2>
+
+    <!-- Formulario de Login -->
+    <form id="loginForm">
+      <input type="email" id="loginCorreo" placeholder="Correo Electrónico" required>
+      <input type="password" id="loginPassword" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+      <p class="toggle-text">¿No tienes cuenta? <span onclick="toggleForms()">Regístrate aquí</span></p>
+    </form>
+
+    <!-- Formulario de Registro -->
+    <form id="registerForm">
+      <input type="text" id="regNombre" placeholder="Tu Nombre" required>
+      <input type="email" id="regCorreo" placeholder="Correo Electrónico" required>
+      <input type="password" id="regPassword" placeholder="Crea una Contraseña" required>
+      <button type="submit">Crear Cuenta</button>
+      <p class="toggle-text">¿Ya tienes cuenta? <span onclick="toggleForms()">Inicia sesión</span></p>
+    </form>
+
+    <p id="mensaje"></p>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>
+

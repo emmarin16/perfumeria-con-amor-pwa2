@@ -1,0 +1,20 @@
+{
+  "short_name": "Perfumería",
+  "name": "Perfumería con Amor",
+  "icons": [
+    {
+      "src": "https://dummyimage.com/192x192/D4AF37/ffffff.png&text=PCA",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://dummyimage.com/512x512/D4AF37/ffffff.png&text=PCA",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "index.html",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "theme_color": "#D4AF37"
+}
