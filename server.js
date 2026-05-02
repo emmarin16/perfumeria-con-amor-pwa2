@@ -8,11 +8,11 @@ app.use(express.json());
 
 // Conexión a la base de datos en Google Cloud
 const db = mysql.createConnection({
-  host: '34.31.23.74', // 
+  host: '34.31.23.74',
   user: 'admin_pwa',
   port: 3306,
   password: 'TuContraseñaSegura123', 
-  database: 'perfumeria'
+  database: 'perfumeria',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
@@ -20,12 +20,12 @@ const db = mysql.createConnection({
 
 db.getConnection((err, connection) => {
   if (err) {
-    console.error('Error conectando a la BD (ETIMEDOUT/Permisos):', err);
+    console.error('Error conectando a la BD:', err.message);
   } else {
-    console.log('¡Conectado a MariaDB con éxito desde el Pool!');
+    console.log('¡Conectado a MariaDB con éxito!');
     connection.release();
   }
-});
+})
 
 // Ruta de Login
 app.post('/api/login', (req, res) => {
