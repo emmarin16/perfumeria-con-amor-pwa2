@@ -8,7 +8,7 @@ function toggleForms() {
   const title = document.getElementById('formTitle');
   const mensajeEl = document.getElementById('mensaje');
   
-  mensajeEl.textContent = ""; // Limpiar mensajes
+  mensajeEl.textContent = ""; 
 
   if (loginForm.style.display === 'none') {
     loginForm.style.display = 'block';
@@ -39,7 +39,7 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
     if (data.success) {
       mensajeEl.style.color = "green";
       mensajeEl.textContent = data.mensaje;
-      setTimeout(toggleForms, 2000); // Cambia al login después de 2 segundos
+      setTimeout(toggleForms, 2000); 
     } else {
       mensajeEl.style.color = "red";
       mensajeEl.textContent = data.mensaje;
@@ -65,6 +65,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
   })
   .then(res => res.json())
   .then(data => {
+    
     if (data.success) {
       mensajeEl.style.color = "green";
       mensajeEl.textContent = "¡Bienvenida, " + data.usuario + "! Redirigiendo...";
@@ -74,7 +75,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
       
       // REDIRECCIÓN A LA PÁGINA PRINCIPAL
       setTimeout(() => {
-        window.location.href = "index.html"; // Asegúrate de que este sea el nombre de tu página principal
+        window.location.href = "index.html"; 
       }, 1500);
 
     } else {
