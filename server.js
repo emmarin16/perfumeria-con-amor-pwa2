@@ -10,6 +10,7 @@ app.use(express.json());
 const db = mysql.createConnection({
   host: '34.31.23.74', // 
   user: 'admin_pwa',
+  port: 3306,
   password: 'TuContraseñaSegura123', 
   database: 'perfumeria'
 });
