@@ -18,14 +18,13 @@ const db = mysql.createConnection({
   queueLimit: 0
 });
 
-db.getConnection((err, connection) => {
+db.query('SELECT 1', (err, results) => {
   if (err) {
-    console.error('Error conectando a la BD:', err.message);
+    console.error('Error inicial de conexión a MariaDB:', err.message);
   } else {
-    console.log('¡Conectado a MariaDB con éxito!');
-    connection.release();
+    console.log('¡Conectado a MariaDB con éxito desde Render!');
   }
-})
+});
 
 // Ruta de Login
 app.post('/api/login', (req, res) => {
